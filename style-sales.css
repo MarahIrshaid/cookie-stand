@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+}
+
+li {
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: black;
+    
+}
+* {
+    background-color:paleturquoise ;
+
+}
+.inline {
+    display: inline;
+}
+article {
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: black;
+}
