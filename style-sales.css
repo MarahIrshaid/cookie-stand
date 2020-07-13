@@ -22,3 +22,10 @@ article {
     font-weight: 600;
     color: black;
 }
+table, th, td {
+    border: 1px solid black;
+    vertical-align: center;
+    padding: 5px;
+
+  }
+ table tr:nth-child(even) {background-color: #f2f2f2;}
