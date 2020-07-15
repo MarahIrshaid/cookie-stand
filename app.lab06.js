@@ -16,7 +16,7 @@ var seattle = {
 
             this.customerPerHour[i] = Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
         }
-         //console.log(this.customerPerHour);
+        //console.log(this.customerPerHour);
 
         return [this.customerPerHour[i]];
 
@@ -191,7 +191,7 @@ var dubai = {
         ulD1.textContent = `Total:  ${this.totalCoockies}`;
 
     }
-    
+
 }
 
 
@@ -375,7 +375,7 @@ function Location(locationsNames, minHourlyCustomers, maxHourlyCustomers, AvgCoo
     this.customerPerHour = [];
     this.cookiesPerHour = [];
     locations.push(this);
-     console.log(locations);
+    console.log(locations);
 
 }
 
@@ -437,10 +437,10 @@ for (var z = 0; z < locations.length; z++) {
     locations[z].salesRenderRows();
 
 }
-var row7 ;
+var row7;
 function totalRow() {
 
-     row7 = document.createElement('tr')
+    row7 = document.createElement('tr')
     table1.appendChild(row7);
     var data6 = document.createElement('td');
     row7.appendChild(data6);
@@ -474,10 +474,10 @@ function totalRow() {
 
 
 
-//    // locations.customerNum();
-//     locations.calcCookiesPurchasedPerHour();
-//     locations.calcCookiesPerLocation();
-//     locations.salesRenderRows();
+    //    // locations.customerNum();
+    //     locations.calcCookiesPurchasedPerHour();
+    //     locations.calcCookiesPerLocation();
+    //     locations.salesRenderRows();
 
 
 
@@ -487,49 +487,86 @@ function totalRow() {
 totalRow();
 
 
+//// lab09////
+
 var branch = document.getElementById("branch");
 
-branch.addEventListener('submit', function(){
+branch.addEventListener('submit', function () {
     // prevent the defaut behavior for the speificed element
     event.preventDefault();
-    
+
 
 
 
 
     var cityLocationValue = event.target.location.value;
-    console.log(cityLocationValue);
+    //console.log(cityLocationValue);
 
+    if (cityLocationValue == "") {
+        alert('you must inter a city name')
 
-    var minValue = event.target.min.value;
-    console.log(min);
+        return false;
+    }
 
-    var maxValue = event.target.max.value;
-    console.log(max);
-
-    var avgValue = event.target.avg.value;
-    console.log(avgValue);
+    var minValue =parseInt( event.target.min.value);
     
+   // console.log(typeof minValue)
+    if (minValue < 0) {
+        alert('wrong! you must enter a number higher than 0')
+    }
+    else if (minValue == "") {
+        alert('you must enter a number')
 
-    var newCat = new Location(
-       cityLocationValue,
-       minValue,
-       maxValue,
-       avgValue,
+        return false;
+    }
+    // console.log(min);
+
+    var maxValue =parseInt( event.target.max.value);
+    
+    if (maxValue < 0) {
+        alert('wrong! you must enter a number higher than 0')
+    }
+    else if (maxValue === "") {
+        alert('you must enter a number')
+
+        return false;
+    }
+    else if (maxValue < minValue) {
+        alert('you must inter a greater value than the minimum number of customers per hour ')
+    }
+    //console.log(max);
+
+    var avgValue = parseInt( event.target.avg.value);
+    console.log(avgValue);
+    if (avgValue < 0) {
+        alert('wrong! you must inter a number higher than 0')
+    }
+    else if (avgValue == "") {
+        alert('you must inter a number')
+
+        return false;
+    }
+   
+
+    var newForm = new Location(
+        cityLocationValue,
+        minValue,
+        maxValue,
+        avgValue,
     )
     // newCat.setAge();
-    newCat.customerNum(this.minHourlyCustomers, this.maxHourlyCustomers);
-    newCat.calcCookiesPurchasedPerHour();
-    newCat.calcCookiesPerLocation(); 
-       locations.push(newCat);
-       table1.removeChild(row7); 
-    newCat.salesRenderRows();
+    newForm.customerNum(this.minHourlyCustomers, this.maxHourlyCustomers);
+    newForm.calcCookiesPurchasedPerHour();
+    newForm.calcCookiesPerLocation();
+    locations.push(newForm);
+    table1.removeChild(row7);
+    newForm.salesRenderRows();
     totalRow();
+    branch.reset();
 
-    
 });
 
 
-     
-    
+
+
 // console.log(Location.locationsNames);
