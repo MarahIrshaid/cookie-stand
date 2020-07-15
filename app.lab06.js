@@ -16,7 +16,7 @@ var seattle = {
 
             this.customerPerHour[i] = Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
         }
-         console.log(this.customerPerHour);
+         //console.log(this.customerPerHour);
 
         return [this.customerPerHour[i]];
 
@@ -36,7 +36,7 @@ var seattle = {
 
     salesResult: function () {
         var parentD2 = document.getElementById('one');
-        var h1D1 = document.createElement('h1');
+        var h1D1 = document.createElement('h3');
         parentD2.appendChild(h1D1);
         h1D1.textContent = `Seattle`;
 
@@ -103,7 +103,7 @@ var tokyo = {
 
     salesResult: function () {
         var parentD2 = document.getElementById('two');
-        var h1D1 = document.createElement('h1');
+        var h1D1 = document.createElement('h3');
         parentD2.appendChild(h1D1);
         h1D1.textContent = `Tokyo`;
 
@@ -169,7 +169,7 @@ var dubai = {
 
     salesResult: function () {
         var parentD2 = document.getElementById('three');
-        var h1D1 = document.createElement('h1');
+        var h1D1 = document.createElement('h3');
         parentD2.appendChild(h1D1);
         h1D1.textContent = `Dubai`;
 
@@ -234,7 +234,7 @@ var paris = {
 
     salesResult: function () {
         var parentD2 = document.getElementById('four');
-        var h1D1 = document.createElement('h1');
+        var h1D1 = document.createElement('h3');
         parentD2.appendChild(h1D1);
         h1D1.textContent = `Paris`;
 
@@ -300,7 +300,7 @@ var lima = {
 
     salesResult: function () {
         var parentD2 = document.getElementById('five');
-        var h1D1 = document.createElement('h1');
+        var h1D1 = document.createElement('h3');
         parentD2.appendChild(h1D1);
         h1D1.textContent = `Lima`;
 
@@ -341,7 +341,7 @@ var hourTotals = [];
 
 var parent = document.getElementById('listsD');
 var table1 = document.createElement('table');
-
+table1.setAttribute('id', 'table5');
 parent.appendChild(table1);
 
 function salesRenderHeads() {
@@ -375,7 +375,7 @@ function Location(locationsNames, minHourlyCustomers, maxHourlyCustomers, AvgCoo
     this.customerPerHour = [];
     this.cookiesPerHour = [];
     locations.push(this);
-    // console.log(locations);
+     console.log(locations);
 
 }
 
@@ -384,6 +384,8 @@ var tokyo = new Location('Tokyo', 3, 24, 1.2);
 var dubai = new Location('Dubai', 11, 38, 3.7);
 var paris = new Location('Paris', 20, 38, 2.3);
 var lima = new Location('Lima', 2, 16, 6.3);
+
+
 
 Location.prototype.customerNum = function (minHourlyCustomers, maxHourlyCustomers) {
 
@@ -435,10 +437,10 @@ for (var z = 0; z < locations.length; z++) {
     locations[z].salesRenderRows();
 
 }
-
+var row7 ;
 function totalRow() {
 
-    var row7 = document.createElement('tr')
+     row7 = document.createElement('tr')
     table1.appendChild(row7);
     var data6 = document.createElement('td');
     row7.appendChild(data6);
@@ -472,10 +474,10 @@ function totalRow() {
 
 
 
-    locations.customerNum();
-    locations.calcCookiesPurchasedPerHour();
-    locations.calcCookiesPerLocation();
-    locations.salesRenderRows();
+//    // locations.customerNum();
+//     locations.calcCookiesPurchasedPerHour();
+//     locations.calcCookiesPerLocation();
+//     locations.salesRenderRows();
 
 
 
@@ -484,4 +486,50 @@ function totalRow() {
 }
 totalRow();
 
-// console.log(locations);
+
+var branch = document.getElementById("branch");
+
+branch.addEventListener('submit', function(){
+    // prevent the defaut behavior for the speificed element
+    event.preventDefault();
+    
+
+
+
+
+    var cityLocationValue = event.target.location.value;
+    console.log(cityLocationValue);
+
+
+    var minValue = event.target.min.value;
+    console.log(min);
+
+    var maxValue = event.target.max.value;
+    console.log(max);
+
+    var avgValue = event.target.avg.value;
+    console.log(avgValue);
+    
+
+    var newCat = new Location(
+       cityLocationValue,
+       minValue,
+       maxValue,
+       avgValue,
+    )
+    // newCat.setAge();
+    newCat.customerNum(this.minHourlyCustomers, this.maxHourlyCustomers);
+    newCat.calcCookiesPurchasedPerHour();
+    newCat.calcCookiesPerLocation(); 
+       locations.push(newCat);
+       table1.removeChild(row7); 
+    newCat.salesRenderRows();
+    totalRow();
+
+    
+});
+
+
+     
+    
+// console.log(Location.locationsNames);

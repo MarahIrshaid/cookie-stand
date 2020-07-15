@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sales page</title>
     <link rel="stylesheet" href="style-sales.css">
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@531&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap" rel="stylesheet">
+
     <style>
         
     </style>
@@ -17,7 +20,52 @@
     <div id="four"></div>
     <div id="five"></div></div>
     <div id="listsD"> </div>
-    
+    <form id="branch">
+        <fieldset>
+          <legend>
+           here you can add another city branch:
+          </legend>
+          <table>
+            <tr>
+              <td>
+                <label for="locationCity">Location: </label>
+              </td>
+              <td>
+                <input required type="text" id="location" placeholder="whats the city?">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="min customers">The minimum number of customers per hour: </label>
+              </td>
+              <td>
+                <input required type="number" id="min" placeholder="inter minimum number">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="catColor">The maximum number of customers per hour: </label>
+              </td>
+              <td>
+                <input required type="number" id="max" placeholder="inter maximum number">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="average">The average number of cookies purchased per customer: </label>
+              </td>
+              <td>
+                <input required type="number" id="avg" placeholder="whats the average?">
+              </td>
+            </tr>
+            
+            <tr>
+              <td><input required type="submit" value="Submit to add to table" id="button"></td>
+              <td></td>
+            </tr>
+            </table>
+            </fieldset>
+            </form>
     <a  id="link" href="index.html" >Take me to home page</a>
     <script src="app.lab06.js">
 

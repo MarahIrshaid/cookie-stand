@@ -1,4 +1,12 @@
+
 h1{
+    text-align: center;
+    font-family: Grenze Gotisch;
+
+   
+}
+h3 {
+    font-family: Grenze Gotisch;
     text-align: center;
 }
 
@@ -10,7 +18,7 @@ li {
     
 }
 * {
-    background-color:paleturquoise ;
+    background-color:#ccbb8d ;
 
 }
 .inline {
@@ -22,11 +30,21 @@ article {
     font-weight: 600;
     color: black;
 }
-table, th, td {
+/* table, th, td {
     border: 1px solid black;
     vertical-align: center;
     padding: 5px;
+    
 
+  } */
+  #table5 {
+    border: 1px solid black;
+    vertical-align: center;
+    padding: 5px;
+      
+  }
+  table {
+      margin: 50px;
   }
  table tr:nth-child(even) {background-color: #f2f2f2;}
 
@@ -40,3 +58,22 @@ table, th, td {
   display: inline-block;
   margin: 50px;
 }
+
+form {
+    font-family: 'Raleway', sans-serif;
+ 
+}
+input {
+    width: 100%;
+   border: none;
+  border-bottom: 2px solid blue;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
