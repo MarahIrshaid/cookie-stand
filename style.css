@@ -81,7 +81,7 @@ section {
 }
 .par {
     font-size: medium;
-    font-family: 'Raleway', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 50px;
     font-weight: 600;
     color: white;
@@ -92,7 +92,7 @@ section {
 }
 li {
     font-size: medium;
-    font-family: 'Raleway', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
     color: white;
     margin: 50px;

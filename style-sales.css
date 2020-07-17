@@ -17,7 +17,7 @@ li {
     color: black;
     
 }
-* {
+body {
     background-color:#ccbb8d ;
 
 }
@@ -41,7 +41,7 @@ article {
     border: 1px solid black;
     vertical-align: center;
     padding: 5px;
-      
+      background-color: pink;
   }
   table {
       margin: 50px;
@@ -77,3 +77,5 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
   }
+
+  
